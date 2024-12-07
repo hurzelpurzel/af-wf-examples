@@ -16,23 +16,37 @@ rules:
   resources: ["sensors"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 
-
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRole
+metadata:
+  name: namespace-reader
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespace
+  verbs:
+  - get
+  - watch
+  - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
 metadata:
   name: read-namespaces
 subjects:
 - kind: ServiceAccount
   name: evt-sa 
-  apiGroup: ""
+  namespace: argo-workflows
 roleRef: 
-  kind: Role 
-  name: argo-events-role 
+  kind: ClusterRole 
+  name: namespace-reader 
   apiGroup: rbac.authorization.k8s.io 
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: evt-sa
+  namespace: argo-workflows
  
