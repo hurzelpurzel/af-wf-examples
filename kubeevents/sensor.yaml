@@ -6,8 +6,8 @@ metadata:
  
 spec:
   eventBusName: default
-  #template:
-  #  serviceAccountName: playground-sa
+  template:
+    serviceAccountName: evt-sa
   dependencies:
   - name: kube
     eventSourceName: kube-api

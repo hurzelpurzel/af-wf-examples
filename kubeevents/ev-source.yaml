@@ -5,8 +5,8 @@ metadata:
   name: kube-api
 spec:
   eventBusName: default
-# template:
-#   serviceAccountName: playground-sa
+  template:
+   serviceAccountName: evt-sa
   resource:
     ingress:
 #      namespace: playground
