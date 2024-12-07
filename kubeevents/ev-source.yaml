@@ -4,7 +4,7 @@ kind: EventSource
 metadata:
   name: kube-api
 spec:
-  eventBusName: eventbus-default-stan-svc
+  eventBusName: default
 # template:
 #   serviceAccountName: playground-sa
   resource:
