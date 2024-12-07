@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: kube-api
+spec:
+  eventBusName: eventbus-default-stan-svc
+# template:
+#   serviceAccountName: playground-sa
+  resource:
+    ingress:
+#      namespace: playground
+      group: ""
+      version: v1
+      resource: namespaces
+      eventTypes: [ ADD, DELETE, UPDATE ]
+#      filter:
+#        fields:
+#        - key: metadata.annotations.autodeploy-ingress-host
+#          operation: =
+#          value: ".+"
