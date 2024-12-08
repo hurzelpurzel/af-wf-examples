@@ -16,16 +16,17 @@ spec:
   - template:
         name: http-trigger
         http:
-          url: http://httpbin/post
+          #url: http://httpbin/post
+          url: http://logger-simple-http-logger:8080
           payload:
             - src:
                 dependencyName: kube
                 dataKey: body.metadata.name
               dest: namespace
           method: POST
-    retryStrategy:
-        steps: 3
-        duration: 3s      
+    #retryStrategy:
+    #    steps: 3
+    #    duration: 3s      
   - template:
       name: logging
       log:
