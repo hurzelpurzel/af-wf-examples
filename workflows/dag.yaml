@@ -27,6 +27,13 @@ metadata:
 spec:
   entrypoint: diamond
   templates:
+  - name: sleep
+    inputs:
+      parameters:
+      - name: time
+    container:
+      image: alpine:3.7
+      command: [sleep, "{{inputs.parameters.time}}"]  
   - name: echo
     inputs:
       parameters:
@@ -62,8 +69,13 @@ spec:
         template: echo-thrice
         arguments:
           parameters: [{name: message, value: C}]
+      - name: WAIT
+        depends: "A"
+        template: sleep
+        arguments:
+            parameters: [{name: time, value: 3m}]    
       - name: D
-        depends: "B && C"
+        depends: "B && C && WAIT"
         template: echo-thrice
         arguments:
           parameters: [{name: message, value: D}]
