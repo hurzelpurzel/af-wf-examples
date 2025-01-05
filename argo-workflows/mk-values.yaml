@@ -1,3 +1,8 @@
 server:
   authModes: 
     - server
+
+controller:
+  workflowNamespaces:
+   - default
+   - sandbox
