@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: log-event
+spec:
+  dependencies:
+    - name: test-dep
+      eventSourceName: special-eventsource
+      eventName: special-event
+  triggers:
+    - template:
+        name: log-trigger
+        log:
+          intervalSeconds: 20

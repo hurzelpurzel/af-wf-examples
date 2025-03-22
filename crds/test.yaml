@@ -1,0 +1,8 @@
+apiVersion: pottmeier.de/v1
+kind: Special
+metadata:
+  name: mystuff
+  namespace: pottmeier
+spec:
+  message: "Hallo Welt"
+  number: 3

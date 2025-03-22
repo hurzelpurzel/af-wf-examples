@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: special-eventsource
+spec:
+  template:
+    serviceAccountName: watcher  # assign a service account with `get`, `list` and `watch` permissions on the resource being watched.
+  resource:
+    special-event:
+      # namespace to listen events within
+      namespace: pottmeier
+      # resource group
+      group: pottmeier.de
+      # resource version
+      version: v1
+      # resource kind
+      resource: specials
+      # type of events
+      # possible values are ADD, DELETE, UPDATE
+      # Optional
+      eventTypes:
+        - ADD
+        - DELETE
+        - UPDATE
+ 
