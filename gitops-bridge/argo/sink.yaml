@@ -1,0 +1,46 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata:
+  name: employee-sensor
+spec:
+  dependencies:
+    - name: employee-add-dep
+      eventSourceName: employee-eventsource
+      eventName: employee-add
+    - name: employee-del-dep
+      eventSourceName: employee-eventsource
+      eventName: employee-delete
+    - name: employee-upd-dep
+      eventSourceName: employee-eventsource
+      eventName: employee-update
+  triggers:
+    - template:
+        name: http-trigger-add
+        http:
+          url: http://dbrest-db2rest:8080/v1/rdbms/db/employee 
+          payload:
+            - src:
+                dependencyName: employee-add-dep
+                #dataKey: notification.0.s3.bucket.name
+          method: POST
+    - template:
+        name: http-trigger-del
+        http:
+          url: http://dbrest-db2rest:8080/v1/rdbms/db/employee 
+          payload:
+            - src:
+                dependencyName: employee-del-dep
+              dest: type
+          method: DELETE
+    - template:
+        name: http-trigger-upd
+        http:
+          url: http://dbrest-db2rest:8080/v1/rdbms/db/employee 
+          payload:
+            - src:
+                dependencyName: employee-upd-dep
+          method: PUT
+      retryStrategy:
+        steps: 3
+        duration: 3s

@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: employee-eventsource
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: employee  # assign a service account with `get`, `list` and `watch` permissions on the resource being watched.
+  resource:
+    employee-add:
+      # namespace to listen events within
+      namespace: gitops-bridge
+      # resource group
+      group: pottmeier.de
+      # resource version
+      version: v1
+      # resource kind
+      resource: employees
+      # type of events
+      # possible values are ADD, DELETE, UPDATE
+      # Optional
+      eventTypes:
+        - ADD
+    employee-delete:
+      # namespace to listen events within
+      namespace: gitops-bridge
+      # resource group
+      group: pottmeier.de
+      # resource version
+      version: v1
+      # resource kind
+      resource: employees
+      # type of events
+      # possible values are ADD, DELETE, UPDATE
+      # Optional
+      eventTypes:
+        - DELETE
+    employee-update:
+      # namespace to listen events within
+      namespace: gitops-bridge
+      # resource group
+      group: pottmeier.de
+      # resource version
+      version: v1
+      # resource kind
+      resource: employees
+      # type of events
+      # possible values are ADD, DELETE, UPDATE
+      # Optional
+      eventTypes:
+        - UPDATE

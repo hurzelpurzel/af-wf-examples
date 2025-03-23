@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram name="Seite-1" id="URmZXDIlB9t61p5J_5ij">
+    <mxGraphModel dx="1434" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-1" value="postgres" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="540" y="430" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7mwIyQAtwxM7kTdy5W1X-2" target="7mwIyQAtwxM7kTdy5W1X-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-15" value="persist" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="7mwIyQAtwxM7kTdy5W1X-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.075" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-2" value="db2rest" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="520" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-3" value="Yaml" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
+          <mxGeometry x="120" y="130" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-4" value="CRD" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-5" value="" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="430" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="7mwIyQAtwxM7kTdy5W1X-6" target="7mwIyQAtwxM7kTdy5W1X-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-9" value="watch" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="7mwIyQAtwxM7kTdy5W1X-8" vertex="1" connectable="0">
+          <mxGeometry x="-0.5" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="7mwIyQAtwxM7kTdy5W1X-6" target="7mwIyQAtwxM7kTdy5W1X-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-11" value="update" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="7mwIyQAtwxM7kTdy5W1X-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.0296" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-6" value="argo-events" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7mwIyQAtwxM7kTdy5W1X-12" value="Json" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="450" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

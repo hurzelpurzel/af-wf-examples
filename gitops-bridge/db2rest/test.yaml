@@ -1,0 +1,7 @@
+env:
+   - name: DB_URL # DBC URL connection string
+     value: "jdbc:postgresql://postgres-postgresql:5432/postgres?currentSchema=public"
+   - name: DB_USER
+     value: "postgres"
+   - name:  DB_PASSWORD
+     value: "H4wyZdg1Lr"
