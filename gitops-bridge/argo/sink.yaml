@@ -22,7 +22,24 @@ spec:
           payload:
             - src:
                 dependencyName: employee-add-dep
-                #dataKey: notification.0.s3.bucket.name
+                dataKey: body.id
+              dest: id
+            - src:
+                dependencyName: employee-add-dep
+                dataKey: body.first_name
+              dest: first_name
+            - src:
+                dependencyName: employee-add-dep
+                dataKey: body.last_name
+              dest: last_name
+            - src:
+                dependencyName: employee-add-dep
+                dataKey: body.email
+              dest: email
+            - src:
+                dependencyName: employee-add-dep
+                dataKey: body.created_on
+              dest: created_on
           method: POST
     - template:
         name: http-trigger-del
@@ -36,10 +53,28 @@ spec:
     - template:
         name: http-trigger-upd
         http:
-          url: http://dbrest-db2rest:8080/v1/rdbms/db/employee 
+          url: http://dbrest-db2rest:8080/v1/rdbms/db/employee&filter=id==1
           payload:
             - src:
                 dependencyName: employee-upd-dep
+                dataKey: body.id
+              dest: id
+            - src:
+                dependencyName: employee-upd-dep
+                dataKey: body.first_name
+              dest: first_name
+            - src:
+                dependencyName: upd-add-dep
+                dataKey: body.last_name
+              dest: last_name
+            - src:
+                dependencyName: upd-add-dep
+                dataKey: body.email
+              dest: email
+            - src:
+                dependencyName: employee-upd-dep
+                dataKey: body.created_on
+              dest: created_on
           method: PUT
       retryStrategy:
         steps: 3

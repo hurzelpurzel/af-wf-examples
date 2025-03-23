@@ -20,6 +20,8 @@ spec:
             spec:
               type: object
               properties:
+                id: 
+                  type: integer
                 first_name:
                   type: string
                 last_name:

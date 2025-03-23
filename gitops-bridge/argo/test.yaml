@@ -4,6 +4,7 @@ metadata:
   name: mustermann
   namespace: gitops-bridge
 spec:
+  id: 2
   first_name: Max
   last_name: Mustermann
   email: max.mustermann@example.com
