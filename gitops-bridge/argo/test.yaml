@@ -1,0 +1,10 @@
+apiVersion: pottmeier.de/v1
+kind: Employee
+metadata:
+  name: mustermann
+  namespace: gitops-bridge
+spec:
+  first_name: Max
+  last_name: Mustermann
+  email: max.mustermann@example.com
+  created_on: "2025-03-14T11:07:36.639Z"
